@@ -20,22 +20,42 @@
 
   <div class="wrapper">
     <div class="half">
-      <h1 class="title">Master</h1>
-      <pre><code class="language-yaml">
+      <table>
+        <tr>
+          <td class="title">
+            <h1 class="title">Master</h1>
+            <a href="https://travis-ci.org/Hackzzila/Discord-Dart" target="_blank">
+              <img src="https://travis-ci.org/Hackzzila/Discord-Dart.svg?branch=master" alt="Travis CI">
+            </a>
+          </td>
+          <td class="code">
+            <pre><code class="language-yaml">
 name: mybot
 dependencies:
   discord_dart: any
-      </code></pre>
+            </code></pre>
+          </td>
+        </tr>
 
-      <h1 class="title">Indev</h1>
-      <pre><code class="language-yaml">
+        <tr>
+          <td class="title">
+            <h1 class="title">Indev</h1>
+            <a href="https://travis-ci.org/Hackzzila/Discord-Dart" target="_blank">
+              <img src="https://travis-ci.org/Hackzzila/Discord-Dart.svg?branch=indev" alt="Travis CI">
+            </a>
+          </td>
+          <td class="code">
+            <pre><code class="language-yaml">
 name: mybot
 dependencies:
   discord_dart:
     git:
       url: git://github.com/Hackzzila/Discord-Dart.git
       ref: indev
-      </code></pre>
+            </code></pre>
+          </td>
+        </tr>
+      </table>
     </div>
     <div class="half">
       <pre>

@@ -19,7 +19,7 @@ ul.nav li.title {
   padding-left: 10px;
   font-weight: 100;
   margin: 0;
-  font-size: 2.5vw;
+  font-size: 250%;
   padding-top: 10px;
   padding-bottom: 10px;
 }
@@ -42,13 +42,24 @@ ul.nav li a {
   padding: 10px;
 }
 
-.wrapper .half h1.title {
-  float: left;
-  padding-left: 10px;
+.wrapper .half table td.title {
+  position: relative;
+}
+
+.wrapper .half table td.title h1.title {
   font-weight: 100;
   margin: 0;
   font-size: 2.5vw;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  display: block;
+  text-align: center;
+}
+
+.wrapper .half table td.title a {
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.wrapper .half table td.code {
+  width: 70%;
 }

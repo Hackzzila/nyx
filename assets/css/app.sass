@@ -17,7 +17,7 @@ ul.nav
     padding-left: 10px
     font-weight: 100
     margin: 0
-    font-size: 2.5vw
+    font-size: 250%
     padding-top: 10px
     padding-bottom: 10px
 
@@ -37,12 +37,21 @@ ul.nav
     float: left
     padding: 10px
 
-    h1.title
-      float: left
-      padding-left: 10px
-      font-weight: 100
-      margin: 0
-      font-size: 2.5vw
-      padding-top: 10px
-      padding-bottom: 10px
-      display: block
+    table
+      td.title
+        position: relative
+
+        h1.title
+          font-weight: 100
+          margin: 0
+          font-size: 2.5vw
+          text-align: center
+
+        a
+          display: inline-block
+          position: relative
+          left: 50%
+          transform: translateX(-50%)
+
+      td.code
+        width: 70%
