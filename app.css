@@ -1,0 +1,61 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+ul.nav {
+  list-style-type: none;
+  background: #333;
+  width: 100%;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+ul.nav li.title {
+  float: left;
+  color: white;
+  padding-left: 10px;
+  font-weight: 100;
+  margin: 0;
+  font-size: 2.5vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+ul.nav li {
+  display: inline;
+  float: right;
+}
+
+ul.nav li a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 25px;
+}
+
+.wrapper {
+  padding: 10px;
+}
+
+.wrapper .left {
+  width: calc(50% - 10px);
+  float: left;
+}
+
+.wrapper .right {
+  width: calc(50% - 10px);
+  float: left;
+}
+
+.wrapper .right textarea.editor {
+  width: calc(100% - 60px);
+  height: 80vh;
+  border: none;
+  background: #23272A;
+  border-radius: 5px;
+  color: white;
+  padding: 30px;
+}

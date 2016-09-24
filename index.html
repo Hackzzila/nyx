@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Discord Dart</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,400" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+  <link rel="stylesheet" href="styles/default.css">
+</head>
+<body>
+  <ul class="nav">
+    <li class="title">Discord Dart</li>
+    <li><a href="https://github.com/Hackzzila/Discord-Dart" target="_blank">GitHub</a></li>
+    <li><a href="https://pub.dartlang.org/packages/discord_dart" target="_blank">Pub</a></li>
+    <li><a href="https://discord.gg/6JwnkNk" target="_blank">Discord</a></li>
+  </ul>
+
+  <div class="wrapper">
+    <div class="left">asd</div>
+    <div class="right">
+      <!--<textarea class="editor" id="editor"></textarea>-->
+
+      <pre>
+        <code class="dart">
+import 'package:discord_dart/discord.dart' as discord;
+
+main() {
+  var bot = new discord.Client("your token");
+
+  bot.on('ready', (e) {
+    print("Ready!");
+  });
+
+  bot.on('message', (e) {
+    var m = e.message;
+
+    if (m.content == "!ping") {
+      bot.sendMessage(m.channel, "Pong!");
+    }
+  });
+}
+        </code>
+      </pre>
+    </div>
+  </div>
+
+  <script src="highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
