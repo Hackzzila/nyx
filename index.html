@@ -19,10 +19,25 @@
   </ul>
 
   <div class="wrapper">
-    <div class="left">asd</div>
-    <div class="right">
-      <!--<textarea class="editor" id="editor"></textarea>-->
+    <div class="half">
+      <h1 class="title">Master</h1>
+      <pre><code class="language-yaml">
+name: mybot
+dependencies:
+  discord_dart: any
+      </code></pre>
 
+      <h1 class="title">Indev</h1>
+      <pre><code class="language-yaml">
+name: mybot
+dependencies:
+  discord_dart:
+    git:
+      url: git://github.com/Hackzzila/Discord-Dart.git
+      ref: indev
+      </code></pre>
+    </div>
+    <div class="half">
       <pre>
         <code class="language-dart">
 import 'package:discord_dart/discord.dart' as discord;

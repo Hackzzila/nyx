@@ -36,26 +36,19 @@ ul.nav li a {
   padding: 25px;
 }
 
-.wrapper {
+.wrapper .half {
+  width: calc(50% - 20px);
+  float: left;
   padding: 10px;
 }
 
-.wrapper .left {
-  width: calc(50% - 10px);
+.wrapper .half h1.title {
   float: left;
-}
-
-.wrapper .right {
-  width: calc(50% - 10px);
-  float: left;
-}
-
-.wrapper .right textarea.editor {
-  width: calc(100% - 60px);
-  height: 80vh;
-  border: none;
-  background: #23272A;
-  border-radius: 5px;
-  color: white;
-  padding: 30px;
+  padding-left: 10px;
+  font-weight: 100;
+  margin: 0;
+  font-size: 2.5vw;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: block;
 }
