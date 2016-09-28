@@ -14,7 +14,7 @@
   <ul class="nav">
     <li class="title">Discord Dart</li>
     <li><a href="https://github.com/Hackzzila/Discord-Dart" target="_blank">GitHub</a></li>
-    <li><a href="https://pub.dartlang.org/packages/discord_dart" target="_blank">Pub</a></li>
+    <li><a href="https://pub.dartlang.org/packages/discord" target="_blank">Pub</a></li>
     <li><a href="https://discord.gg/6JwnkNk" target="_blank">Discord</a></li>
   </ul>
 
@@ -32,7 +32,7 @@
             <pre><code class="language-yaml">
 name: mybot
 dependencies:
-  discord_dart: any
+  discord: any
             </code></pre>
           </td>
         </tr>
@@ -48,7 +48,7 @@ dependencies:
             <pre><code class="language-yaml">
 name: mybot
 dependencies:
-  discord_dart:
+  discord:
     git:
       url: git://github.com/Hackzzila/Discord-Dart.git
       ref: indev
@@ -60,7 +60,7 @@ dependencies:
     <div class="half">
       <pre>
         <code class="language-dart">
-import 'package:discord_dart/discord.dart' as discord;
+import 'package:discord/discord.dart' as discord;
 
 main() {
   var bot = new discord.Client("your token");
