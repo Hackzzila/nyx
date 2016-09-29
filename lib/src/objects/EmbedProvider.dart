@@ -1,5 +1,3 @@
-import '../../discord.dart';
-
 /// A message embed provider.
 class EmbedProvider {
   /// The embed provider's name.

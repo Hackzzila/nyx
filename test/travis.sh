@@ -1,14 +1,31 @@
 # Exit on errors
 set -e
 
-# Install the linter
-pub global activate linter
+# Make sure dartfmt is run on everything
+# This assumes you have dart_style as a dev_dependency
+echo "Checking dartfmt..."
+NEEDS_DARTFMT="$(find example lib test -name "*.dart" | xargs pub run dart_style:format -n)"
+if [[ ${NEEDS_DARTFMT} != "" ]]
+then
+  echo "FAILED"
+  echo "${NEEDS_DARTFMT}"
+  exit 1
+fi
+echo "PASSED"
 
-# Check code for errors
-pub global run linter lib/
+# Make sure we pass the analyzer
+echo "Checking dartanalyzer..."
+FAILS_ANALYZER="$(find example lib test -name "*.dart" | xargs dartanalyzer --options analysis_options.yaml)"
+if [[ $FAILS_ANALYZER == *"[error]"* ]]
+then
+  echo "FAILED"
+  echo "${FAILS_ANALYZER}"
+  exit 1
+fi
+echo "PASSED"
 
 if [ "$DISCORD_TOKEN" ]; then
-  timeout 60 dart test/discord.dart
+  dart -c test/discord.dart
 else
   echo "Discord token not present, skipping Discord tests"
 fi
