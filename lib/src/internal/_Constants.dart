@@ -16,6 +16,15 @@ class _OPCodes {
   static const int guildSync = 12;
 }
 
+class _VoiceOPCodes {
+  static const int identify = 0;
+  static const int selectProtocol = 1;
+  static const int ready = 2;
+  static const int heartbeat = 3;
+  static const int sessionDescription = 4;
+  static const int speaking = 5;
+}
+
 /// The client constants.
 class _Constants {
   static const String host = "discordapp.com";
@@ -37,6 +46,16 @@ class _Constants {
     "HELLO": 10,
     "HEARTBEAT_ACK": 11,
     "GUILD_SYNC": 12
+  };
+
+  /// The gateway OP codes for voice.
+  static const Map<String, int> voiceOpCodes = const <String, int>{
+    "IDENTIFY": 0,
+    "SELECT_PROTOCOL": 1,
+    "READY": 2,
+    "HEARTBEAT": 3,
+    "SESSION_DESCRIPTION": 4,
+    "SPEAKING": 5
   };
 
   /// The permission bits.

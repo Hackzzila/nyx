@@ -13,6 +13,7 @@ class Shard extends _BaseObj {
   w_transport.WebSocket _socket;
   int _sequence;
   String _sessionId;
+  StreamController<Map<String, dynamic>> _onMsg;
 
   /// Emitted when the shard is ready.
   StreamController<Shard> onReady;
@@ -24,6 +25,7 @@ class Shard extends _BaseObj {
     this._ws = ws;
     this.onReady = new StreamController<Shard>.broadcast();
     this.onError = new StreamController<Shard>.broadcast();
+    this._onMsg = new StreamController<Map<String, dynamic>>.broadcast();
   }
 
   void _connect([bool resume = true, bool init = false]) {
@@ -55,6 +57,8 @@ class Shard extends _BaseObj {
 
   Future<Null> _handleMsg(String msg, bool resume) async {
     final json = JSON.decode(msg) as Map<String, dynamic>;
+
+    this._onMsg.add(json);
 
     if (json['s'] != null) {
       this._sequence = json['s'];

@@ -1,7 +1,9 @@
 library discord;
 
+import 'dart:io';
 import 'dart:async';
 import 'dart:convert';
+import 'dart:typed_data';
 import 'dart:collection';
 import 'package:http_parser/http_parser.dart' as http_parser;
 import 'package:args/args.dart' as args;
@@ -68,6 +70,7 @@ part 'src/objects/Shard.dart';
 part 'src/objects/TextChannel.dart';
 part 'src/objects/User.dart';
 part 'src/objects/VoiceChannel.dart';
+part 'src/objects/VoiceConnection.dart';
 part 'src/objects/Webhook.dart';
 
 part 'src/errors/ClientNotReadyError.dart';
