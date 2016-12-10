@@ -1,65 +1,89 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-}
-
-ul.nav {
-  list-style-type: none;
-  background: #333;
-  width: 100%;
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-
-ul.nav li.title {
-  float: left;
+body {
+  background: black;
   color: white;
-  padding-left: 10px;
-  font-weight: 100;
-  margin: 0;
-  font-size: 250%;
-  padding-top: 10px;
-  padding-bottom: 10px;
 }
 
-ul.nav li {
-  display: inline;
-  float: right;
+nav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: inline-block;
 }
 
-ul.nav li a {
-  display: block;
+nav a {
+  display: inline-block;
+  padding: 20px;
+  border-bottom: 1px solid white;
+  margin-left: 5px;
   color: white;
   text-decoration: none;
-  padding: 25px;
+  float: right;
+  font-weight: 400;
+  font-family: 'Source Sans Pro', sans-serif;
+  transition: all 500ms ease-in-out;
 }
 
-.wrapper .half {
-  width: calc(50% - 20px);
-  float: left;
-  padding: 10px;
+nav a:hover {
+  color: black;
+  background: white;
 }
 
-.wrapper .half table td.title {
-  position: relative;
-}
-
-.wrapper .half table td.title h1.title {
-  font-weight: 100;
-  margin: 0;
-  font-size: 2.5vw;
-  text-align: center;
-}
-
-.wrapper .half table td.title a {
-  display: inline-block;
-  position: relative;
+.center {
+  position: absolute;
+  top: 50%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
 }
 
-.wrapper .half table td.code {
-  width: 70%;
+.center h1.title {
+  font-weight: 400;
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 10em;
+  margin: 0;
+}
+
+.center h3.tagline {
+  font-weight: 400;
+  font-family: 'Source Sans Pro', sans-serif;
+  margin: 0;
+  margin-top: -20px;
+}
+
+.moon {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #ECF0F1;
+  border-radius: 50%;
+  top: 20%;
+  left: 10%;
+  margin-top: -100px;
+  margin-left: -100px;
+  overflow: hidden;
+  -moz-box-shadow: 0px 0px 30px #fff;
+  -webkit-box-shadow: 0px 0px 30px #fff;
+  box-shadow: 0px 0px 30px #fff;
+  z-index: 10;
+}
+
+.moon:before {
+  content: "";
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: #BEC3C7;
+  top: 100px;
+  left: 50px;
+  border-radius: 50%;
+}
+
+.moon:after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: #BEC3C7;
+  top: 0px;
+  right: 0px;
+  border-radius: 50%;
 }
