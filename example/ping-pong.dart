@@ -1,19 +1,17 @@
 import 'package:discord/discord.dart' as discord;
-import 'package:discord/discord_vm.dart' as discord;
+import 'package:discord/vm.dart' as discord;
 
 void main() {
   discord.configureDiscordForVM();
-  var bot = new discord.Client("your token");
+  discord.Client bot = new discord.Client("your token");
 
-  bot.onReady.listen((e) {
+  bot.onReady.listen((discord.ReadyEvent e) {
     print("Ready!");
   });
 
-  bot.onMessage.listen((e) {
-    var m = e.message;
-
-    if (m.content == "!ping") {
-      m.channel.sendMessage("Pong!");
+  bot.onMessage.listen((discord.MessageEvent e) {
+    if (e.message.content == "!ping") {
+      e.message.channel.sendMessage(content: "Pong!");
     }
   });
 }
