@@ -2,7 +2,8 @@ part of discord;
 
 /// A role.
 class Role {
-  Client _client;
+  /// The Client object.
+  Client client;
 
   /// The raw object returned by the API
   Map<String, dynamic> raw;
@@ -37,7 +38,7 @@ class Role {
   /// A timestamp for when the channel was created.
   DateTime createdAt;
 
-  Role._new(this._client, this.raw, this.guild) {
+  Role._new(this.client, this.raw, this.guild) {
     this.id = raw['id'];
     this.name = raw['name'];
     this.position = raw['position'];
@@ -45,7 +46,7 @@ class Role {
     this.managed = raw['managed'];
     this.mentionable = raw['mentionable'];
     this.permissions =
-        new Permissions.fromInt(this._client, raw['permissions']);
+        new Permissions.fromInt(this.client, raw['permissions']);
     this.createdAt = Util.getDate(this.id);
 
     if (raw['color'] == 0) {
@@ -66,7 +67,7 @@ class Role {
       bool mentionable: null,
       bool hoist: null}) async {
     HttpResponse r = await this
-        ._client
+        .client
         .http
         .send('PATCH', "/guilds/${this.guild.id}/roles/$id", body: {
       "name": name != null ? name : this.name,
@@ -77,13 +78,13 @@ class Role {
       "mentionable": mentionable != null ? mentionable : this.mentionable
     });
     return new Role._new(
-        this._client, r.body.asJson() as Map<String, dynamic>, this.guild);
+        this.client, r.body.asJson() as Map<String, dynamic>, this.guild);
   }
 
   /// Deletes the role.
   Future<Null> delete() async {
     await this
-        ._client
+        .client
         .http
         .send('DELETE', "/guilds/${this.guild.id}/roles/$id");
     return null;
