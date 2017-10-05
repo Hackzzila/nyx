@@ -20,14 +20,12 @@ class ClientUser extends User {
   }
 
   /// Updates the client's status.
-  /// Returns [ClientUser] object.
   ///     ClientUser.setStatus(status: 'dnd');
   ClientUser setStatus({String status: null}) {
     return this.setPresence(status: status);
   }
 
   /// Updates the client's game.
-  /// Returns [ClientUser] object.
   ///     ClientUser.setGame(name: '<3');
   ClientUser setGame({String name: null, type: 0, url: null}) {
     Map<String, dynamic> game = {'name': name, 'type': type, 'url': url};
@@ -36,8 +34,6 @@ class ClientUser extends User {
   }
 
   /// Updates the client's presence.
-  ///
-  /// Returns [ClientUser] object.
   ///     ClientUser.setPresence(status: s, activity: { 'name': args.join(' ') });
   ClientUser setPresence(
       {String status: null, bool afk: false, dynamic activity: null}) {
