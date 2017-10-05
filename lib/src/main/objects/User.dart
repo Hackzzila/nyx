@@ -46,7 +46,7 @@ class User {
   }
 
   /// The user's avatar, represented as URL.
-  String avatarURL([ String format = 'webp', int size = 128])
+  String avatarURL({ String format = 'webp', int size = 128 })
     => 'https://cdn.${_Constants.host}/avatars/${this.id}/${this.avatar}.$format?size=$size';
 
   /// Gets the [DMChannel] for the user.
