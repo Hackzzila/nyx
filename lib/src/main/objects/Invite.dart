@@ -2,7 +2,7 @@ part of discord;
 
 /// An invite.
 class Invite {
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API

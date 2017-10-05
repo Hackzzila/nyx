@@ -2,7 +2,7 @@ part of discord;
 
 /// A mini channel object for invites.
 class InviteChannel {
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API

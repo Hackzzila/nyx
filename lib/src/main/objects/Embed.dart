@@ -2,7 +2,7 @@ part of discord;
 
 /// A message embed.
 class Embed {
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API

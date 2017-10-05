@@ -2,7 +2,7 @@ part of discord;
 
 /// A role.
 class Role {
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API

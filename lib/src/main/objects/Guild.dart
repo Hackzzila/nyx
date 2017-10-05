@@ -2,7 +2,7 @@ part of discord;
 
 /// A guild.
 class Guild {
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API

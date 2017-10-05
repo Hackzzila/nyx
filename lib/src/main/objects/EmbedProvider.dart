@@ -2,7 +2,7 @@ part of discord;
 
 /// A message embed provider.
 class EmbedProvider {
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API

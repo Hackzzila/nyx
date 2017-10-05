@@ -2,7 +2,7 @@ part of discord;
 
 /// A mini guild object for invites.
 class InviteGuild {
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API

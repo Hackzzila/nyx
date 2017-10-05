@@ -4,7 +4,7 @@ part of discord;
 class User {
   Timer _typing;
 
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API

@@ -5,7 +5,7 @@ class Message {
   StreamController<MessageUpdateEvent> _onUpdate;
   StreamController<MessageDeleteEvent> _onDelete;
 
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API.

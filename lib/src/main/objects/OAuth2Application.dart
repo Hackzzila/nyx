@@ -2,7 +2,7 @@ part of discord;
 
 /// An OAuth2 application.
 class OAuth2Application {
-  /// The Client object.
+  /// The [Client] object.
   Client client;
 
   /// The raw object returned by the API
