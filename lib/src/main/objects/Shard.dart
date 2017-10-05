@@ -34,7 +34,7 @@ class Shard {
     this.onDisconnect = this._onDisconnect.stream;
   }
 
-  /// Updates the presence for every shard.
+  /// Updates the presence for this shard.
   void setPresence({
       String status: null,
       bool afk: false,
