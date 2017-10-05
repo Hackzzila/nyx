@@ -128,10 +128,11 @@ class Guild {
     }
   }
 
-  // The guild's icon, represented as URL.
-  String iconURL({ String format: 'webp', int size: 128 })
-    => 'https://cdn.${_Constants.host}/icons/${this.id}/${this.icon}.$format?size=$size';
-
+  /// The guild's icon, represented as URL.
+  String iconURL({ String format: 'webp', int size: 128 }) {
+    return 'https://cdn.${_Constants.host}/icons/${this.id}/${this.icon}.$format?size=$size';
+  }
+    
   /// Returns a string representation of this object.
   @override
   String toString() {
