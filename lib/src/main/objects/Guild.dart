@@ -90,8 +90,9 @@ class Guild {
         new Role._new(this.client, o, this);
       });
 
-      this.shard = this.client.shards[
-          (int.parse(this.id) >> 22) % this.client._options.shardCount];
+      this.shard = this
+          .client
+          .shards[(int.parse(this.id) >> 22) % this.client._options.shardCount];
 
       if (guildCreate) {
         this.members = new Map<String, Member>();
@@ -170,20 +171,19 @@ class Guild {
   /// Creates an empty role.
   Future<Role> createRole() async {
     HttpResponse r = await this.client.http.send('POST', "/guilds/$id/roles");
-    return new Role._new(
-        client, r.body.asJson() as Map<String, dynamic>, this);
+    return new Role._new(client, r.body.asJson() as Map<String, dynamic>, this);
   }
 
   /// Creates a channel.
   Future<dynamic> createChannel(String name, String type,
       {int bitrate: 64000, int userLimit: 0}) async {
-    HttpResponse r = await this.client.http.send(
-        'POST', "/guilds/$id/channels", body: {
-      "name": name,
-      "type": type,
-      "bitrate": bitrate,
-      "user_limit": userLimit
-    });
+    HttpResponse r = await this.client.http.send('POST', "/guilds/$id/channels",
+        body: {
+          "name": name,
+          "type": type,
+          "bitrate": bitrate,
+          "user_limit": userLimit
+        });
 
     if (r.body.asJson()['type'] == 0) {
       return new TextChannel._new(
@@ -228,8 +228,7 @@ class Guild {
       "afk_timeout": afkTimeout != null ? afkTimeout : this.afkTimeout,
       "icon": icon != null ? icon : this.icon
     });
-    return new Guild._new(
-        this.client, r.body.asJson() as Map<String, dynamic>);
+    return new Guild._new(this.client, r.body.asJson() as Map<String, dynamic>);
   }
 
   /// Gets a [Member] object. Adds it to `Guild.members` if
@@ -277,8 +276,7 @@ class Guild {
 
   /// Gets all of the webhooks for this guild.
   Future<Map<String, Webhook>> getWebhooks() async {
-    HttpResponse r =
-        await this.client.http.send('GET', "/guilds/$id/webhooks");
+    HttpResponse r = await this.client.http.send('GET', "/guilds/$id/webhooks");
     Map<String, dynamic> map = <String, dynamic>{};
     r.body.asJson().forEach((Map<String, dynamic> o) {
       Webhook webhook = new Webhook._fromApi(this.client, o);

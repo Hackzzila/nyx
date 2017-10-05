@@ -45,8 +45,7 @@ class Role {
     this.hoist = raw['hoist'];
     this.managed = raw['managed'];
     this.mentionable = raw['mentionable'];
-    this.permissions =
-        new Permissions.fromInt(this.client, raw['permissions']);
+    this.permissions = new Permissions.fromInt(this.client, raw['permissions']);
     this.createdAt = Util.getDate(this.id);
 
     if (raw['color'] == 0) {
@@ -83,10 +82,7 @@ class Role {
 
   /// Deletes the role.
   Future<Null> delete() async {
-    await this
-        .client
-        .http
-        .send('DELETE', "/guilds/${this.guild.id}/roles/$id");
+    await this.client.http.send('DELETE', "/guilds/${this.guild.id}/roles/$id");
     return null;
   }
 
