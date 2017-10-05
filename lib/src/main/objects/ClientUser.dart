@@ -20,27 +20,33 @@ class ClientUser extends User {
   }
 
   /// Updates the client's status.
-  ClientUser setStatus({ String status: null }) {
+  /// Returns [ClientUser] object.
+  ///     ClientUser.setStatus(status: 'dnd');
+  ClientUser setStatus({String status: null}) {
     return this.setPresence(status: status);
   }
 
   /// Updates the client's game.
-  ClientUser setGame({ String name: null, type: 0, url: null}) {
-    Map<String, dynamic> game = {
-      'name': name,
-      'type': type,
-      'url': url
-    };
+  /// Returns [ClientUser] object.
+  ///     ClientUser.setGame(name: '<3');
+  ClientUser setGame({String name: null, type: 0, url: null}) {
+    Map<String, dynamic> game = {'name': name, 'type': type, 'url': url};
 
     return this.setPresence(activity: game);
   }
 
   /// Updates the client's presence.
-  ClientUser setPresence({String status: null, bool afk: false, dynamic activity: null}) {
+  ///
+  /// Returns [ClientUser] object.
+  ///     ClientUser.setPresence(status: s, activity: { 'name': args.join(' ') });
+  ClientUser setPresence(
+      {String status: null, bool afk: false, dynamic activity: null}) {
     Map<String, dynamic> game = {
-      'name': activity != null ? activity['name']: null,
-      'type': activity != null ? activity['type'] != null ? activity['type']: 0 : 0,
-      'url': activity != null ? activity['url']: null
+      'name': activity != null ? activity['name'] : null,
+      'type': activity != null
+          ? activity['type'] != null ? activity['type'] : 0
+          : 0,
+      'url': activity != null ? activity['url'] : null
     };
 
     this.client.shards.forEach((int id, Shard shard) {
