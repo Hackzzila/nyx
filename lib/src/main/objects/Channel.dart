@@ -11,7 +11,7 @@ class Channel {
   /// The channel's ID.
   String id;
 
-  /// The channel's type.
+  /// The channel's type. This can be either `voice` or `text` at the moment of writing. Is `voice` for a channel category.
   String type;
 
   /// A timestamp for when the channel was created.
